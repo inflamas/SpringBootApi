@@ -13,6 +13,9 @@ public class User {
     @Column(name = "username")
     private String username;
 
+    @Column(name = "password")
+    private String password;
+
     @OneToOne(optional = false)
     @JoinColumn(name="ban_id")
     private Ban ban;
@@ -24,6 +27,14 @@ public class User {
         auth.ban = ban;
 
         return auth;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public String getUsername() {
